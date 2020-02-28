@@ -29,8 +29,7 @@ class WebController extends Controller
         //dd($_SESSION);
         return view("student_listing",["student" => $_SESSION]);
     }
-    public function addStudent()
-    {
+    public function addStudent(){
         # code...
         return view("create_student");
     }
