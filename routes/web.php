@@ -15,9 +15,11 @@ Route::get('/', "WebController@homePage");
 //Route::METHOD(path_string,HANDLE_FUNCTION);
 // Method: post get put delete ... CRUD
 
-Route::get("/add-student","WebController@addStudent");
+Route::get("/add-student", "WebController@addStudent");
 // Method: GET chạy url trên trình duyệt
-Route::get("/danh-sach-lop-hoc","WebController@getClassRoom");
+Route::get("/danh-sach-lop-hoc", "WebController@getClassRoom");
 //Route::METHOD(path_string,Controller@HANDLE_FUNCTION_IN_CONTROLLER);
-Route::post("/danh-sach-lop-hoc","WebController@postClassRoom");
+Route::post("/danh-sach-lop-hoc", "WebController@postClassRoom");
 Route::get('/shop', "WebController@shopPage");
+
+Route::get('/product-single', "WebController@singlePage");

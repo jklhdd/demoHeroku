@@ -9,27 +9,29 @@ use Symfony\Component\Mime\Header\Headers;
 class WebController extends Controller
 {
     //
-       
-    public function postClassRoom(Request $request){
+
+    public function postClassRoom(Request $request)
+    {
         $student = [
-            
-                "name" => $request->get("input-name"),
-                "address" => $request->get("input-address"),
-                "email" => $request->get("input-email"),
-                "phone" => $request->get("input-phone")
-            
+
+            "name" => $request->get("input-name"),
+            "address" => $request->get("input-address"),
+            "email" => $request->get("input-email"),
+            "phone" => $request->get("input-phone")
+
         ];
-        
-        array_push($_SESSION,$student);
+
+        array_push($_SESSION, $student);
         //dd($_SESSION);   
-        return view("student_listing",["student" => $_SESSION]);     
-        
+        return view("student_listing", ["student" => $_SESSION]);
     }
-    public function getClassRoom(){
+    public function getClassRoom()
+    {
         //dd($_SESSION);
-        return view("student_listing",["student" => $_SESSION]);
+        return view("student_listing", ["student" => $_SESSION]);
     }
-    public function addStudent(){
+    public function addStudent()
+    {
         # code...
         return view("create_student");
     }
@@ -38,8 +40,13 @@ class WebController extends Controller
     {
         return view('home');
     }
-    public function shopPage(){
+    public function shopPage()
+    {
         return view('shop');
     }
 
+    public function singlePage()
+    {
+        return view('single');
+    }
 }
