@@ -39,8 +39,8 @@ class WebController extends Controller
 
     public function homePage()
     {
-        //$product = Product::take(10)->orderBy("product_name","asc")->get();
-        return view('home');
+        $product = Product::take(10)->orderBy("product_name","asc")->get();
+        return view('home',["product"=>$product]);
     }
     public function shopPage()
     {
