@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Location;
 use Symfony\Component\Mime\Header\Headers;
@@ -38,15 +39,18 @@ class WebController extends Controller
 
     public function homePage()
     {
-        return view('home');
+        $product = Product::take(10)->orderBy("product_name","asc")->get();
+        return view('home',["product"=>$product]);
     }
     public function shopPage()
     {
-        return view('shop');
+        $product = Product::take(10)->where("category_id",5)->orderBy("product_name","asc")->get();
+        return view('shop',["product"=>$product]);
     }
 
     public function singlePage()
     {
-        return view('single');
+        $product = Product::find(1);
+        return view('single',["product"=>$product]);
     }
 }
