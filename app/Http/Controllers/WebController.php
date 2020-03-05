@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Location;
@@ -38,19 +39,25 @@ class WebController extends Controller
     }
 
     public function homePage()
-    {
-        $product = Product::take(10)->orderBy("product_name","asc")->get();
-        return view('home',["product"=>$product]);
+    {        
+        $product1 = Product::take(8)->join("category","category.id","=","product.category_id")->orderBy("price","asc")->get();
+        $product3 = Product::take(8)->join("category","category.id","=","product.category_id")->orderBy("product.created_at","asc")->get();
+        $product2 = Product::take(8)->join("category","category.id","=","product.category_id")->orderBy("price","desc")->get();
+        return view('home',["product1"=>$product1,"product2"=>$product2,"product3"=>$product3]);
     }
     public function shopPage()
     {
-        $product = Product::take(10)->where("category_id",5)->orderBy("product_name","asc")->get();
+        $product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
+        
         return view('shop',["product"=>$product]);
     }
 
     public function singlePage()
     {
-        $product = Product::find(1);
-        return view('single',["product"=>$product]);
+        $mainProduct = Product::find(2);
+        $product_cate = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",$mainProduct->category_id)->orderBy("product_name","asc")->get();
+        $product_brand = Product::take(8)->join("brand","brand.id","=","product.brand_id")->where("brand.id",$mainProduct->brand_id)->orderBy("product_name","asc")->get();
+        
+        return view('single',["product_cate"=>$product_cate,"product_brand"=>$product_brand],["mainProduct"=>$mainProduct]);
     }
 }

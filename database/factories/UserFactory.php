@@ -44,10 +44,10 @@ $factory->define(\App\Product::class,function(Faker $faker){
     return [
         "product_name" => $faker->unique()->name,
         "product_desc" => $faker->sentence,
-        "thumbnail" => $faker->imageUrl(),
+        "thumbnail" => "images/product-".$faker->numberBetween(1,8).".png",
         "price" => $faker->numberBetween(100,200),
         "quantity" => $faker->numberBetween(1,500),
-        "category_id" => $faker->numberBetween(1,100),
-        "brand_id" => $faker->numberBetween(1,100)
+        "category_id" => $faker->numberBetween(1,5),
+        "brand_id" => $faker->numberBetween(1,5)
     ];
 });

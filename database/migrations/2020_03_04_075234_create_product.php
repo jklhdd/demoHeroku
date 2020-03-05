@@ -22,7 +22,7 @@ class CreateProduct extends Migration
             $table->unsignedBigInteger("category_id");
             // bigIncrements = unsignedBigInteger + auto increment
             $table->unsignedBigInteger("brand_id");
-            $table->decimal("price",12,4);
+            $table->decimal("price",12,2);
             $table->unsignedInteger("quantity")->default(1);    
             $table->timestamps();
 
