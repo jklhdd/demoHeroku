@@ -72,7 +72,7 @@ return [
             'username' => "ipymoyzaqrhxoh", //env('DB_USERNAME', 'forge'),
             'password' =>
                 "37c9b44567ddf272e5173c548be24afec5783636dbd5feac2acc5413adfd716a", //env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
