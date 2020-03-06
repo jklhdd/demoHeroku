@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-10 order-md-last">
-				<div class="row">					
+				<div class="row">
 					@foreach($product as $p)
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex fadeInUp ftco-animated">
 							<div class="product d-flex flex-column">
@@ -46,7 +46,7 @@
 							<p>Items not found</p>
 
 					@endforelse
-					
+
 				</div>
 				<div class="row mt-5">
 					<div class="col text-center">

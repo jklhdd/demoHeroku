@@ -268,7 +268,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -314,7 +314,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     @endforeach
                 </div>
             </div>

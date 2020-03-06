@@ -46,146 +46,146 @@
 
 
 <section class="ftco-section bg-light">
-            <div class="container">
-                <div class="row justify-content-center mb-3 pb-3">
-                    <div class="col-md-12 heading-section text-center ftco-animate">
-                        <h2 class="mb-4">Lowest price</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    @foreach($product1 as $p)
-                        <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-                            <div class="product d-flex flex-column">
-                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
-                                    <div class="overlay"></div>
-                                </a>
-                                <div class="text py-3 pb-4 px-3">
-                                    <div class="d-flex">
-                                        <div class="cat">
-                                            <span>{{$p->brand_name}}</span>
-                                        </div>
-                                        <div class="rating">
-                                            <p class="text-right mb-0">
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
-                                    <div class="pricing">
-                                        <p class="price"><span>{{$p->price}}</span></p>
-                                    </div>
-                                    <p class="bottom-area d-flex px-3">
-                                        <a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-                                        <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>  
-                    @endforeach
-                </div>
-            </div>
+	<div class="container">
+		<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Lowest price</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach($product1 as $p)
+				<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
+					<div class="product d-flex flex-column">
+						<a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+							<div class="overlay"></div>
+						</a>
+						<div class="text py-3 pb-4 px-3">
+							<div class="d-flex">
+								<div class="cat">
+									<span>{{$p->brand_name}}</span>
+								</div>
+								<div class="rating">
+									<p class="text-right mb-0">
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+									</p>
+								</div>
+							</div>
+							<h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
+							<div class="pricing">
+								<p class="price"><span>{{$p->price}}</span></p>
+							</div>
+							<p class="bottom-area d-flex px-3">
+								<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+								<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
 </section>
 <section class="ftco-section bg-light">
-            <div class="container">
-                <div class="row justify-content-center mb-3 pb-3">
-                    <div class="col-md-12 heading-section text-center ftco-animate">
-                        <h2 class="mb-4">Highest price</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    @foreach($product2 as $p)
-                        <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-                            <div class="product d-flex flex-column">
-                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
-                                    <div class="overlay"></div>
-                                </a>
-                                <div class="text py-3 pb-4 px-3">
-                                    <div class="d-flex">
-                                        <div class="cat">
-                                            <span>{{$p->brand_name}}</span>
-                                        </div>
-                                        <div class="rating">
-                                            <p class="text-right mb-0">
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
-                                    <div class="pricing">
-                                        <p class="price"><span>{{$p->price}}</span></p>
-                                    </div>
-                                    <p class="bottom-area d-flex px-3">
-                                        <a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-                                        <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-                                    </p>
-                                </div>
-                            </div>
-						</div>  
-                    @endforeach
-                </div>
-            </div>
+	<div class="container">
+		<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Highest price</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach($product2 as $p)
+				<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
+					<div class="product d-flex flex-column">
+						<a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+							<div class="overlay"></div>
+						</a>
+						<div class="text py-3 pb-4 px-3">
+							<div class="d-flex">
+								<div class="cat">
+									<span>{{$p->brand_name}}</span>
+								</div>
+								<div class="rating">
+									<p class="text-right mb-0">
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+									</p>
+								</div>
+							</div>
+							<h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
+							<div class="pricing">
+								<p class="price"><span>{{$p->price}}</span></p>
+							</div>
+							<p class="bottom-area d-flex px-3">
+								<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+								<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
 </section>
 
 <section class="ftco-section bg-light">
-            <div class="container">
-                <div class="row justify-content-center mb-3 pb-3">
-                    <div class="col-md-12 heading-section text-center ftco-animate">
-                        <h2 class="mb-4">Newest</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    @foreach($product3 as $p)
-                        <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-                            <div class="product d-flex flex-column">
-                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
-                                    <div class="overlay"></div>
-                                </a>
-                                <div class="text py-3 pb-4 px-3">
-                                    <div class="d-flex">
-                                        <div class="cat">
-                                            <span>{{$p->brand_name}}</span>
-                                        </div>
-                                        <div class="rating">
-                                            <p class="text-right mb-0">
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
-                                    <div class="pricing">
-                                        <p class="price"><span>{{$p->price}}</span></p>
-                                    </div>
-                                    <p class="bottom-area d-flex px-3">
-                                        <a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-                                        <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>  
-                    @endforeach
-                </div>
-            </div>
+	<div class="container">
+		<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Newest</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			@foreach($product3 as $p)
+				<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
+					<div class="product d-flex flex-column">
+						<a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+							<div class="overlay"></div>
+						</a>
+						<div class="text py-3 pb-4 px-3">
+							<div class="d-flex">
+								<div class="cat">
+									<span>{{$p->brand_name}}</span>
+								</div>
+								<div class="rating">
+									<p class="text-right mb-0">
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+										<a href="#"><span class="ion-ios-star-outline"></span></a>
+									</p>
+								</div>
+							</div>
+							<h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
+							<div class="pricing">
+								<p class="price"><span>{{$p->price}}</span></p>
+							</div>
+							<p class="bottom-area d-flex px-3">
+								<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+								<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
 </section>
-		
-		
+
+
 <section class="ftco-section ftco-choose ftco-no-pb ftco-no-pt">
 	<div class="container">
 		<div class="row no-gutters">
