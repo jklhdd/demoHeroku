@@ -21,5 +21,9 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "@prettier/plugin-php": "^0.13.0",
+        "prettier": "^1.19.1"
     }
 }
