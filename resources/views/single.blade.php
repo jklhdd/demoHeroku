@@ -85,14 +85,14 @@
 
                     <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Nike Free RN 2019 iD</h3>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                            <h3 class="mb-4">{{$mainProduct->product_name}}</h3>
+                            <p>{{$mainProduct->product_desc}}</p>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Manufactured By Nike</h3>
+                            <h3 class="mb-4">Manufactured By {{$product_brand[0]->brand_name}}</h3>
                             <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                     @foreach($product_cate as $p)
                         <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">
@@ -258,7 +258,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h3><a href="#">{{$p->product_name}}</a></h3>
+                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
                                     <div class="pricing">
                                         <p class="price"><span>{{$p->price}}</span></p>
                                     </div>
@@ -286,7 +286,7 @@
                     @foreach($product_brand as $p)
                         <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">
@@ -304,7 +304,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h3><a href="#">{{$p->product_name}}</a></h3>
+                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
                                     <div class="pricing">
                                         <p class="price"><span>{{$p->price}}</span></p>
                                     </div>

@@ -22,4 +22,4 @@ Route::get("/danh-sach-lop-hoc", "WebController@getClassRoom");
 Route::post("/danh-sach-lop-hoc", "WebController@postClassRoom");
 Route::get('/shop', "WebController@shopPage");
 
-Route::get('/product-single', "WebController@singlePage");
+Route::get('/product-single-{id}', "WebController@singlePage");

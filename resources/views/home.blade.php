@@ -58,7 +58,7 @@
                     @foreach($product1 as $p)
                         <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">
@@ -76,7 +76,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h3><a href="#">{{$p->product_name}}</a></h3>
+                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
                                     <div class="pricing">
                                         <p class="price"><span>{{$p->price}}</span></p>
                                     </div>
@@ -104,7 +104,7 @@
                     @foreach($product2 as $p)
                         <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">
@@ -122,7 +122,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h3><a href="#">{{$p->product_name}}</a></h3>
+                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
                                     <div class="pricing">
                                         <p class="price"><span>{{$p->price}}</span></p>
                                     </div>
@@ -132,11 +132,12 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>  
+						</div>  
                     @endforeach
                 </div>
             </div>
 </section>
+
 <section class="ftco-section bg-light">
             <div class="container">
                 <div class="row justify-content-center mb-3 pb-3">
@@ -150,7 +151,7 @@
                     @foreach($product3 as $p)
                         <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
+                                <a href="{{url('/product-single-'.$p->id)}}" class="img-prod"><img class="img-fluid" src={{$p->thumbnail}} alt="Colorlib Template">
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">
@@ -168,7 +169,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h3><a href="#">{{$p->product_name}}</a></h3>
+                                    <h3><a href="{{url('/product-single-'.$p->id)}}">{{$p->product_name}}</a></h3>
                                     <div class="pricing">
                                         <p class="price"><span>{{$p->price}}</span></p>
                                     </div>
