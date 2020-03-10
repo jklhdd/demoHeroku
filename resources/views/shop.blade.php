@@ -71,84 +71,25 @@
 						<h2 class="heading">Categories</h2>
 						<div class="fancy-collapse-panel">
 							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingOne">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Men's Shoes
-											</a>
-										</h4>
-									</div>
-									<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-										<div class="panel-body">
-											<ul>
-												<li><a href="#">Sport</a></li>
-												<li><a href="#">Casual</a></li>
-												<li><a href="#">Running</a></li>
-												<li><a href="#">Jordan</a></li>
-												<li><a href="#">Soccer</a></li>
-												<li><a href="#">Football</a></li>
-												<li><a href="#">Lifestyle</a></li>
-											</ul>
+								@foreach($brand as $b)
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$b->id}}" aria-expanded="true" aria-controls="collapseOne">{{$b->brand_name}}
+												</a>
+											</h4>
+										</div>
+										<div id="collapse{{$b->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<ul>
+													@foreach($category as $c)
+														<li><a href="{{url('/shop/'.$b->id.'/'.$c->id)}}">{{$c->category_name}}</a></li>											
+													@endforeach
+												</ul>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Women's Shoes
-											</a>
-										</h4>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-										<div class="panel-body">
-											<ul>
-												<li><a href="#">Sport</a></li>
-												<li><a href="#">Casual</a></li>
-												<li><a href="#">Running</a></li>
-												<li><a href="#">Jordan</a></li>
-												<li><a href="#">Soccer</a></li>
-												<li><a href="#">Football</a></li>
-												<li><a href="#">Lifestyle</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accessories
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-										<div class="panel-body">
-											<ul>
-												<li><a href="#">Jeans</a></li>
-												<li><a href="#">T-Shirt</a></li>
-												<li><a href="#">Jacket</a></li>
-												<li><a href="#">Shoes</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingFour">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">Clothing
-											</a>
-										</h4>
-									</div>
-									<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-										<div class="panel-body">
-											<ul>
-												<li><a href="#">Jeans</a></li>
-												<li><a href="#">T-Shirt</a></li>
-												<li><a href="#">Jacket</a></li>
-												<li><a href="#">Shoes</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
+								@endforeach								
 							</div>
 						</div>
 					</div>

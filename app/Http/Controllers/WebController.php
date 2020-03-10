@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Brand;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Location;
 use Symfony\Component\Mime\Header\Headers;
@@ -59,15 +60,34 @@ class WebController extends Controller
             "product3" => $product3
         ]);
     }
-    public function shopPage()
+    public function shopPage($b_id, $c_id)
     {
         //$product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
         $product = Product::take(8)
-            ->where("product.category_id", 5)
+            ->where("product.brand_id", $b_id)
+            ->where("product.category_id", $c_id)
             ->orderBy("product_name", "asc")
             ->get();
+        $category = Category::get();
+        $brand = Brand::get();
+        return view('shop', [
+            "product" => $product,
+            "category" => $category,
+            "brand" => $brand
+        ]);
+    }
+    public function shopList()
+    {
+        //$product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
 
-        return view('shop', ["product" => $product]);
+        $product = Product::all()->random(8);
+        $category = Category::get();
+        $brand = Brand::get();
+        return view('shop', [
+            "product" => $product,
+            "category" => $category,
+            "brand" => $brand
+        ]);
     }
 
     public function singlePage($id)

@@ -20,6 +20,7 @@ Route::get("/add-student", "WebController@addStudent");
 Route::get("/danh-sach-lop-hoc", "WebController@getClassRoom");
 //Route::METHOD(path_string,Controller@HANDLE_FUNCTION_IN_CONTROLLER);
 Route::post("/danh-sach-lop-hoc", "WebController@postClassRoom");
-Route::get('/shop', "WebController@shopPage");
+Route::get('/shop', "WebController@shopList");
+Route::get('/shop/{b_id}/{c_id}', "WebController@shopPage");
 
 Route::get('/product-single-{id}', "WebController@singlePage");
