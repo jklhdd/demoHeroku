@@ -48,19 +48,23 @@
 					@endforelse
 
 				</div>
-				<div class="row mt-5">
-					<div class="col text-center">
-						<div class="block-27">
-							<ul>
-								<li><a href="#">&lt;</a></li>
-								<li class="active"><span>1</span></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">&gt;</a></li>
+				<div class="row mt-5">				
+					<div class="d-flex col justify-content-center">
+						{{$product->links()}}					
+						<!-- <div class="block-27">							
+							<ul>		
+								@php
+									if(App\Product::count() % 9 == 0)
+										$count = App\Product::count() /9;
+									else $count = App\Product::count() /9 +1;
+								@endphp
+								<li><a href="{{$product->previousPageUrl()}}">&lt;</a></li>								
+								@for($i = 1; $i <= $count; $i++)
+									<li><a href="{{$product->url($i)}}">{{$i}}</a></li>
+								@endfor
+								<li><a href="{{$product->nextPageUrl()}}">&gt;</a></li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="w-100"></div>
-                    <div class="input-group col-md-6 d-flex mb-3">
+                    <form class=" col-md-6 d-flex mb-3">
                         <span class="input-group-btn mr-2">
                             <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
                                 <i class="ion-ios-remove"></i>
@@ -55,13 +55,14 @@
                                 <i class="ion-ios-add"></i>
                             </button>
                         </span>
-                    </div>
+                    </form>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                         <p style="color: #000;">{{$mainProduct->quantity}} piece available</p>
                     </div>
                 </div>
-                <p><a href="cart.html" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
+                <p><a href="cart.html" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a>
+                <a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 

@@ -63,11 +63,10 @@ class WebController extends Controller
     public function shopPage($b_id, $c_id)
     {
         //$product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
-        $product = Product::take(8)
-            ->where("product.brand_id", $b_id)
+        $product = Product::where("product.brand_id", $b_id)
             ->where("product.category_id", $c_id)
             ->orderBy("product_name", "asc")
-            ->get();
+            ->paginate(9);
         $category = Category::get();
         $brand = Brand::get();
         return view('shop', [
@@ -80,7 +79,8 @@ class WebController extends Controller
     {
         //$product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
 
-        $product = Product::all()->random(8);
+        $product = Product::paginate(9);
+        //dd($product);
         $category = Category::get();
         $brand = Brand::get();
         return view('shop', [
@@ -93,19 +93,16 @@ class WebController extends Controller
     public function singlePage($id)
     {
         $mainProduct = Product::find($id);
-        $product_cate = Product::take(8)
-            ->join("category", "category.id", "=", "product.category_id")
-            ->where("category.id", $mainProduct->category_id)
+        $product_cate = Category::find($mainProduct->category_id)
+            ->Products()
             ->orderBy("product_name", "asc")
-            ->select('product.*', 'category.id as cate_id')
+            ->take(8)
             ->get();
-        $product_brand = Product::take(8)
-            ->join("brand", "brand.id", "=", "product.brand_id")
-            ->where("brand.id", $mainProduct->brand_id)
+        $product_brand = Brand::find($mainProduct->brand_id)
+            ->Products()
             ->orderBy("product_name", "asc")
-            ->select('product.*', 'brand.id as b_id')
+            ->take(8)
             ->get();
-
         return view(
             'single',
             [
