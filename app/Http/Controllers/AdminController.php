@@ -27,11 +27,12 @@ class AdminController extends Controller
         $request->validate([
             "category_name" => "required|string|unique:category"
         ]);
-        dd($request);
+
         try {
             Category::create([
                 "category_name" => $request->get("category_name")
             ]);
+            dd($request);
         } catch (Exception $e) {
             return redirect()->back();
         }
