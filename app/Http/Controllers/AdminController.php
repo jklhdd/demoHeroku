@@ -32,8 +32,8 @@ class AdminController extends Controller
             Category::create([
                 "category_name" => $request->get("category_name")
             ]);
-            dd($request);
         } catch (Exception $e) {
+            dd($e);
             return redirect()->back();
         }
         return redirect()->to("admin/category");
