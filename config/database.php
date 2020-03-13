@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'default' => "mysql", //env('DB_CONNECTION', 'mysql'),
+    'default' => "phsql", //env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
