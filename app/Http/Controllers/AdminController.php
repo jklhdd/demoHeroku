@@ -33,7 +33,7 @@ class AdminController extends Controller
                 "category_name" => $request->get("category_name")
             ]);
         } catch (Exception $e) {
-            dd($e);
+            //dd($e);
             return redirect()->back();
         }
         return redirect()->to("admin/category");
