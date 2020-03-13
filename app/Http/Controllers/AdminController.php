@@ -24,6 +24,7 @@ class AdminController extends Controller
 
     public function categoryStore(Request $request)
     {
+        dd($request);
         $request->validate([
             "category_name" => "required|string|unique:category"
         ]);
