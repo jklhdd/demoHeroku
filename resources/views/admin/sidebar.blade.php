@@ -68,14 +68,14 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="active">
+            <a href="javascript:;" class="{{Request::is('admin/*') ? 'active' : ''}}">
               <i class="fa fa-th"></i>
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li class="active"><a href="{{url('admin/category')}}" >Category Table</a></li>
-              <li><a href="{{url('admin/brand')}}">Brand Table</a></li>
-              <li><a href="{{url('admin/product')}}">Product Table</a></li>
+              <li class="{{Request::path() == 'admin/category' ? 'active' : ''}}"><a href="{{url('admin/category')}}" >Category Table</a></li>
+              <li class="{{Request::path() == 'admin/brand' ? 'active' : ''}}"><a href="{{url('admin/brand')}}">Brand Table</a></li>
+              <li class="{{Request::path() == 'admin/product' ? 'active' : ''}}"><a href="{{url('admin/product')}}">Product Table</a></li>
             </ul>
           </li>
           <li>
