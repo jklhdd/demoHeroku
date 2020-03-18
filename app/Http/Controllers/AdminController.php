@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Category;
 use App\Product;
+use App\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Unique;
 
 class AdminController extends Controller
 {
+    public function dashbroad()
+    {
+        return view("admin.home");
+    }
     // category table
     public function category()
     {
@@ -36,7 +41,7 @@ class AdminController extends Controller
             //dd($e);
             return redirect()->back();
         }
-        return redirect()->to("admin/category");
+        return redirect()->to("admin/tables/category");
     }
 
     public function categoryEdit($id)
@@ -59,7 +64,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/category");
+        return redirect()->to("admin/tables/category");
     }
 
     public function categoryDestroy($id)
@@ -70,7 +75,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/category");
+        return redirect()->to("admin/tables/category");
     }
 
     // brand table
@@ -97,7 +102,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/brand");
+        return redirect()->to("admin/tables/brand");
     }
 
     public function brandEdit($id)
@@ -119,7 +124,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/brand");
+        return redirect()->to("admin/tables/brand");
     }
 
     public function brandDestroy($id)
@@ -130,7 +135,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/brand");
+        return redirect()->to("admin/tables/brand");
     }
 
     // product table
@@ -169,7 +174,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/product");
+        return redirect()->to("admin/tables/product");
     }
 
     public function productEdit($id)
@@ -204,7 +209,7 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/product");
+        return redirect()->to("admin/tables/product");
     }
 
     public function productDestroy($id)
@@ -215,6 +220,32 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return redirect()->to("admin/product");
+        return redirect()->to("admin/tables/product");
+    }
+
+    // product table
+
+    public function user()
+    {
+        $user = User::all();
+        return view("admin.user.usertable", ["user" => $user]);
+    }
+
+    public function userUpdate($id)
+    {
+        $user = User::find($id);
+
+        try {
+            if ($user->role == 0) {
+                $user->role = 1;
+                $user->save();
+            } else {
+                $user->role = 0;
+                $user->save();
+            }
+        } catch (Exception $e) {
+            return redirect()->back();
+        }
+        return redirect()->to("admin/tables/user");
     }
 }

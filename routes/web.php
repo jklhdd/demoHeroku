@@ -1,8 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
-Route::prefix("admin")->group(function () {
-    include_once "admin.php";
-});
+Route::prefix("admin")
+    ->middleware('check_admin')
+    ->group(function () {
+        include_once "admin.php";
+    });
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,8 @@ Route::get('/product-single-{id}', "WebController@singlePage");
 Auth::routes();
 
 Route::get('/home', 'WebController@homePage');
+
+Route::get('/logout', function () {
+    Illuminate\Support\Facades\Auth::logout();
+    return redirect()->to('login');
+});

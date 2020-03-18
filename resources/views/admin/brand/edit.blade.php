@@ -3,7 +3,7 @@
 <div class="col-lg-6 col-md-6 col-sm-6">
             <h4 class="title">Edit Form</h4>
             <div id="message"></div>
-            <form class="contact-form php-mail-form" role="form" action="{{url('admin/brand/update',['id'=>$brand->id])}}" method="POST">
+            <form class="contact-form php-mail-form" role="form" action="{{url('admin/tables/brand/update',['id'=>$brand->id])}}" method="POST">
                 @csrf
                 <div class="form-group @if($errors->has('brand_name'))has-error @endif">
                     <input type="name" name="brand_name" class="form-control " id="brand_name" 

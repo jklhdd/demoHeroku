@@ -58,10 +58,10 @@ Register
 
             <hr>
             <a href="index.html" class="btn btn-google btn-user btn-block">
-              <i class="fab fa-google fa-fw"></i> Register with Google
+              <i class="fa fa-google-plus"></i> Register with Google
             </a>
             <a href="index.html" class="btn btn-facebook btn-user btn-block">
-              <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+              <i class="fa fa-facebook"></i> Register with Facebook
             </a>
           </form>
           <hr>

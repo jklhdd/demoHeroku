@@ -28,8 +28,9 @@
                     <td>{{$p->updated_at}}</td>
                     <td>
                     <!-- <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button> -->
-                    <a href="{{url('admin/product/edit/'.$p->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="{{url('admin/product/delete/'.$p->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                    <a href="{{url('admin/tables/product/edit/'.$p->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('admin/tables/product/delete/'.$p->id)}}" class="btn btn-danger btn-xs"
+                    onClick="return confirm('Confirm delete?')"><i class="fa fa-trash-o "></i></a>
                     </td>
                 </tr>
             @endforeach                  
@@ -40,7 +41,7 @@
     <!-- /content-panel -->
     </div>
     <!-- /col-md-12 -->
-    <div class="col-md-12 mt"><a href="{{url('admin/product/create')}}">Create new product</a></div>
+    <div class="col-md-12 mt"><a href="{{url('admin/tables/product/create')}}">Create new product</a></div>
 </div>
 
 @endsection

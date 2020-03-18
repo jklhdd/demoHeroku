@@ -6,7 +6,7 @@
           <p class="centered"><a href="profile.html"><img src="{{asset('admin/img/ui-sam.jpg')}}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index.html">
+            <a class="{{Request::path() == 'admin/home' ? 'active' : ''}}" href="{{url('admin/home')}}">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
@@ -68,14 +68,16 @@
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="{{Request::is('admin/*') ? 'active' : ''}}">
+            <a href="javascript:;" class="{{Request::is('admin/tables/*') ? 'active' : ''}}">
               <i class="fa fa-th"></i>
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li class="{{Request::path() == 'admin/category' ? 'active' : ''}}"><a href="{{url('admin/category')}}" >Category Table</a></li>
-              <li class="{{Request::path() == 'admin/brand' ? 'active' : ''}}"><a href="{{url('admin/brand')}}">Brand Table</a></li>
-              <li class="{{Request::path() == 'admin/product' ? 'active' : ''}}"><a href="{{url('admin/product')}}">Product Table</a></li>
+              <li class="{{Request::path() == 'admin/tables/category' ? 'active' : ''}}"><a href="{{url('admin/tables/category')}}" >Category Table</a></li>
+              <li class="{{Request::path() == 'admin/tables/brand' ? 'active' : ''}}"><a href="{{url('admin/tables/brand')}}">Brand Table</a></li>
+              <li class="{{Request::path() == 'admin/tables/product' ? 'active' : ''}}"><a href="{{url('admin/tables/product')}}">Product Table</a></li>
+              <li class="{{Request::path() == 'admin/tables/user' ? 'active' : ''}}"><a href="{{url('admin/tables/user')}}">User Table</a></li>
+              
             </ul>
           </li>
           <li>

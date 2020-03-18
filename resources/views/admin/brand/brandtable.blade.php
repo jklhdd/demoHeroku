@@ -24,8 +24,9 @@
                     <td>{{$b->updated_at}}</td>
                     <td>
                     <!-- <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button> -->
-                    <a href="{{url('admin/brand/edit/'.$b->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                    <a href="{{url('admin/brand/delete/'.$b->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                    <a href="{{url('admin/tables/brand/edit/'.$b->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('admin/tables/brand/delete/'.$b->id)}}" class="btn btn-danger btn-xs"
+                    onClick="return confirm('Confirm delete?')"><i class="fa fa-trash-o "></i></a>
                     </td>
                 </tr>
             @endforeach                  
@@ -36,7 +37,7 @@
     <!-- /content-panel -->
     </div>
     <!-- /col-md-12 -->
-    <div class="col-md-12 mt"><a href="{{url('admin/brand/create')}}">Create new brand</a></div>
+    <div class="col-md-12 mt"><a href="{{url('admin/tables/brand/create')}}">Create new brand</a></div>
 </div>
 
 @endsection
