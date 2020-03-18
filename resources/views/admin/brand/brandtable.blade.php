@@ -24,8 +24,8 @@
                     <td>{{$b->updated_at}}</td>
                     <td>
                     <!-- <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button> -->
-                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                    <a href="{{url('admin/brand/edit/'.$b->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                    <a href="{{url('admin/brand/delete/'.$b->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                     </td>
                 </tr>
             @endforeach                  

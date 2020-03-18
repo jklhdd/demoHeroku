@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 Route::prefix("admin")->group(function () {
     include_once "admin.php";
 });
@@ -28,3 +28,7 @@ Route::get('/shop', "WebController@shopList");
 Route::get('/shop/{b_id}/{c_id}', "WebController@shopPage");
 
 Route::get('/product-single-{id}', "WebController@singlePage");
+
+Auth::routes();
+
+Route::get('/home', 'WebController@homePage');
