@@ -33,7 +33,6 @@ Route::get('/shop/{b_id}/{c_id}', "WebController@shopPage");
 Route::get('/product-single-{id}', "WebController@singlePage");
 
 Route::get('/cart', "WebController@cart")->middleware('auth');
-Route::get('/check-out', "WebController@checkOut")->middleware('auth');
 
 Route::get('/add-cart/{id}', "WebController@addCart")->middleware('auth');
 Route::get('/buy-now/{id}', "WebController@buyNow")->middleware('auth');
@@ -52,3 +51,9 @@ Route::get('/logout', function () {
     session()->flush();
     return redirect()->to('/');
 });
+
+Route::get('/check-out', "WebController@checkOut")->middleware('auth');
+Route::post('/check-out', "WebController@placeOrder")->middleware('auth');
+Route::get('/checkout-success', "Webcontroller@checkSuccess")->middleware(
+    'auth'
+);

@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Brand;
+use App\Order;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Location;
 use Symfony\Component\Mime\Header\Headers;
+use Illuminate\Support\Facades\DB;
 
 class WebController extends Controller
 {
@@ -119,10 +123,6 @@ class WebController extends Controller
 
         return view("cart", ["cart" => $cart]);
     }
-    public function checkOut()
-    {
-        return view("checkout");
-    }
 
     public function addCart($id, Request $request)
     {
@@ -189,5 +189,50 @@ class WebController extends Controller
     {
         $request->session()->forget("cart");
         return redirect()->to("cart");
+    }
+
+    public function checkOut(Request $request)
+    {
+        if (!$request->session()->has("cart")) {
+            return redirect()->to("/");
+        }
+        $total = 0;
+        foreach ($request->session()->get("cart") as $p) {
+            $total = $total + $p->price * $p->cart_qty;
+        }
+        session(["total" => $total]);
+        return view("checkout");
+    }
+
+    public function placeOrder(Request $request)
+    {
+        $request->validate([
+            'name' => 'required | string',
+            'address' => 'required',
+            'payment_method' => 'required',
+            'phone' => 'required'
+        ]);
+
+        $cart = $request->session()->get('cart');
+
+        $order = Order::create([
+            'user_id' => Auth::id(),
+            'customer_name' => $request->get("name"),
+            'shipping_address' => $request->get("address"),
+            'phone' => $request->get("phone"),
+            'grand_total' => $request->session()->get("total"),
+            'payment_method' => $request->get("payment_method"),
+            "status" => Order::STATUS_PENDING
+        ]);
+        foreach ($cart as $p) {
+            DB::table("order_product")->insert([
+                'order_id' => $order->id,
+                'product_id' => $p->id,
+                'qty' => $p->cart_qty,
+                'price' => $p->price
+            ]);
+        }
+        session()->forget('cart');
+        return redirect()->to("/");
     }
 }
