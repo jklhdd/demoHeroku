@@ -1,3 +1,7 @@
+@php
+	$cart = session()->get("cart");
+	if($cart == null) $cart = [];
+@endphp
 <div class="py-1 bg-black">
     <div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -9,7 +13,16 @@
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">@yield('email')</span>
+						    <span class="text">
+								@if(Auth::check())
+									<span class="text">Welcome back ! {{Auth::user()->name}} | </span>
+									<a class="text" href="{{url('/logout')}}"> Logout?</a>
+									
+								@else
+									<a class="text" href="{{url('/login')}}">Login Now!</a>
+
+								@endif
+							</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
@@ -29,20 +42,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="{{url('/shop')}}">Shop</a>
-                <a class="dropdown-item" href="{{url('/product-single')}}">Single Product</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
-              </div>
-            </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          	<li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
+	          	<li class="nav-item"><a href="{{url('/shop')}}" class="nav-link">Shop</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+						<a class="dropdown-item" href="{{url('/cart')}}">Cart</a>
+						<a class="dropdown-item" href="{{url('/check-out')}}">Checkout</a>
+						<a class="dropdown-item" href="#">My Information</a>
+					</div>
+            	</li>
+	          	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+	          	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+	          	<li class="nav-item cta cta-colored"><a href="{{url('/cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>{{count($cart)}}</a></li>
 
 	        </ul>
 	      </div>

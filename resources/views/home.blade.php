@@ -3,15 +3,6 @@
 @section('title',"Trang chu")
 @section('location',"HOME")
 
-@section('email')
-@if(Auth::check())
-	<span class="text">Welcome back ! {{Auth::user()->name}}</span>
-@else
-	<a class="text" href="{{url('/login')}}">Login Now!</a>
-
-@endif
-
-@endsection
 
 @section('content')
 

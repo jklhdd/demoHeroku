@@ -248,4 +248,15 @@ class AdminController extends Controller
         }
         return redirect()->to("admin/tables/user");
     }
+
+    public function userDestroy($id)
+    {
+        $user = User::find($id);
+        try {
+            $user->delete();
+        } catch (Exception $e) {
+            return redirect()->back();
+        }
+        return redirect()->to("admin/tables/user");
+    }
 }

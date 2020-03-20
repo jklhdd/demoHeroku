@@ -11,7 +11,7 @@
               <span>Dashboard</span>
               </a>
           </li>
-          <li class="sub-menu">
+          <!-- <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
               <span>UI Elements</span>
@@ -66,7 +66,7 @@
               <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
             </ul>
-          </li>
+          </li> -->
           <li class="sub-menu">
             <a href="javascript:;" class="{{Request::is('admin/tables/*') ? 'active' : ''}}">
               <i class="fa fa-th"></i>

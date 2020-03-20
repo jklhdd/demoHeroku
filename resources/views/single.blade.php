@@ -43,7 +43,8 @@
                         </div>
                     </div>
                     <div class="w-100"></div>
-                    <form class=" col-md-6 d-flex mb-3">
+                    <form class=" col-md-6 d-flex mb-3" id="quantity-form" method="POST" action="{{url('add-cart/'.$mainProduct->id)}}">
+                        @csrf
                         <span class="input-group-btn mr-2">
                             <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
                                 <i class="ion-ios-remove"></i>
@@ -61,8 +62,8 @@
                         <p style="color: #000;">{{$mainProduct->quantity}} piece available</p>
                     </div>
                 </div>
-                <p><a href="cart.html" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a>
-                <a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
+                <p><a onclick="document.getElementById('quantity-form').submit()" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a>
+                <a href="{{url('buy-now/'.$mainProduct->id)}}" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 
