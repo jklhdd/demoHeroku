@@ -28,8 +28,8 @@
 @includeIf('admin/footer')
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="{{asset('admin/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('admin/lib/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('js/jquery.min.js')}}"></script>
+  <script src="{{asset('js/bootstrap.min.js')}}"></script>
   <script src="{{asset('admin/lib/jquery-ui-1.9.2.custom.min.js')}}"></script>
   <script src="{{asset('admin/lib/jquery.ui.touch-punch.min.js')}}"></script>
   <script class="include" type="text/javascript" src="{{asset('admin/lib/jquery.dcjqaccordion.2.7.js')}}"></script>

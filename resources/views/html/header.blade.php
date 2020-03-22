@@ -42,17 +42,17 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          	<li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
-	          	<li class="nav-item"><a href="{{url('/shop')}}" class="nav-link">Shop</a></li>
+	          	<li class="nav-item {{Request::path() == '/' ? 'active' : ''}}"><a href="{{url('/')}}" class="nav-link">Home</a></li>
+	          	<li class="nav-item {{Request::path() == 'shop' ? 'active' : ''}}"><a href="{{url('/shop')}}" class="nav-link">Shop</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
 						<a class="dropdown-item" href="{{url('/cart')}}">Cart</a>
 						<a class="dropdown-item" href="{{url('/check-out')}}">Checkout</a>
-						<a class="dropdown-item" href="#">My Information</a>
+						<a class="dropdown-item" href="{{url('/information')}}">My Information</a>
 					</div>
             	</li>
-	          	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+	          	<li class="nav-item "><a href="#" class="nav-link">Blog</a></li>
 	          	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 	          	<li class="nav-item cta cta-colored"><a href="{{url('/cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>{{count($cart)}}</a></li>
 

@@ -40,8 +40,6 @@ Route::post('/add-cart/{id}', "WebController@addCart")->middleware('auth');
 Route::get('/remove-cart/{id}', "WebController@removeCart")->middleware('auth');
 Route::get('/clear-cart', "WebController@destroyCart")->middleware('auth');
 
-Route::post('/store-bill', "WebController@storeBill")->middleware('auth');
-
 Auth::routes();
 
 Route::get('/home', 'WebController@homePage');
@@ -57,3 +55,5 @@ Route::post('/check-out', "WebController@placeOrder")->middleware('auth');
 Route::get('/checkout-success', "Webcontroller@checkSuccess")->middleware(
     'auth'
 );
+
+Route::get('/information', "WebController@getInfo")->middleware('auth');

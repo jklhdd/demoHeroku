@@ -28,8 +28,8 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('admin/lib/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('admin/lib/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <!-- Core plugin JavaScript
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->

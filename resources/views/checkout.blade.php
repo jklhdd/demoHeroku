@@ -13,7 +13,7 @@
                         <div class="col-md-12">
                             <div class="form-group" >
                                 <label for="firstname">Name</label>
-                                <input type="text" class="form-control" placeholder="" name="name" required>
+                                <input type="text" class="form-control" name="name" required />
                             </div>
                         </div>   
                 
@@ -37,8 +37,8 @@
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="streetaddress">Street Address</label>
-                                <input type="text" class="form-control" placeholder="House number and street name" name="address" required>
+                                <label for="streetaddress">Address</label>
+                                <input type="text" class="form-control" name="address" required>
                             </div>
                         </div>
                     <!-- <div class="col-md-6">
@@ -63,7 +63,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" placeholder="" name="phone" required>
+                                <input type="text" class="form-control" name="phone" required>
                             </div>
                         </div>
                     <!-- <div class="col-md-6">
@@ -111,36 +111,36 @@
                     <div class="col-md-6">
                         <div class="cart-detail bg-light p-3 p-md-4">
                             <h3 class="billing-heading mb-4">Payment Method</h3>
-                                <div class="form-group" form="bill">
+                                <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="payment_method" class="mr-2" value="bank_transfer"> Direct Bank Tranfer</label>
+                                            <label><input type="radio" name="payment_method" class="mr-2" value="bank_transfer" required> Direct Bank Tranfer</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group" form="bill">
+                                <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="payment_method" class="mr-2" value="cod"> Check Payment</label>
+                                            <label><input type="radio" name="payment_method" class="mr-2" value="cod" required> Check Payment</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group" form="bill">
+                                <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="payment_method" class="mr-2" value="paypal"> Paypal</label>
+                                            <label><input type="radio" name="payment_method" class="mr-2" value="paypal" required> Paypal</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group" form="bill">
+                                <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="checkbox">
                                             <label><input type="checkbox" value="" class="mr-2" required> I have read and accept the terms and conditions</label>
                                         </div>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-primary py-3 px-4">Place an order</button>
                                 
-                                <p><a onclick="document.getElementById('bill').submit()" class="btn btn-primary py-3 px-4">Place an order</a></p>
                             </div>
                         </div>
                     </div>

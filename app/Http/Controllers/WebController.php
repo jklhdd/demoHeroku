@@ -193,7 +193,10 @@ class WebController extends Controller
 
     public function checkOut(Request $request)
     {
-        if (!$request->session()->has("cart")) {
+        if (
+            !$request->session()->has("cart") ||
+            count($request->session()->get("cart")) == 0
+        ) {
             return redirect()->to("/");
         }
         $total = 0;
@@ -233,6 +236,15 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-        return redirect()->to("/");
+        return redirect()->to("checkout-success");
+    }
+    public function checkSuccess()
+    {
+        return view("succes");
+    }
+
+    public function getInfo()
+    {
+        return view("information");
     }
 }
