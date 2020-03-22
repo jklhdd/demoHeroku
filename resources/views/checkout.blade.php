@@ -18,22 +18,7 @@
                         </div>   
                 
                         <div class="w-100"></div>
-                    <!-- <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="country">State / Country</label>
-                            <div class="select-wrap">
-                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                <select name="" id="" class="form-control">
-                                    <option value="">France</option>
-                                    <option value="">Italy</option>
-                                    <option value="">VietNam</option>
-                                    <option value="">South Korea</option>
-                                    <option value="">Hongkong</option>
-                                    <option value="">Japan</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div> -->
+                   
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
@@ -41,24 +26,7 @@
                                 <input type="text" class="form-control" name="address" required>
                             </div>
                         </div>
-                    <!-- <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
-                        </div>
-                    </div> -->
-                    <!-- <div class="w-100"></div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                        <label for="towncity">Town / City</label>
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="postcodezip">Postcode / ZIP *</label>
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                    </div> -->
+                    
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
@@ -66,12 +34,7 @@
                                 <input type="text" class="form-control" name="phone" required>
                             </div>
                         </div>
-                    <!-- <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="emailaddress">Email Address</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div> -->
+                 
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group mt-4">

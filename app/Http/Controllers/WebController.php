@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use App\Brand;
 use App\Order;
+use App\OrderProduct;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -139,7 +140,7 @@ class WebController extends Controller
             if ($p->id == $product->id) {
                 $p->cart_qty = $p->cart_qty + $request->quantity;
                 session(["cart" => $cart]);
-                return redirect()->back;
+                return redirect()->back();
             }
         }
         $product->cart_qty = $request->quantity;
@@ -246,5 +247,22 @@ class WebController extends Controller
     public function getInfo()
     {
         return view("information");
+    }
+
+    public function getOrderList()
+    {
+        $order = Order::all()->where("user_id", "=", Auth::id());
+        return view('orderlist', ['order' => $order]);
+    }
+
+    public function getOrderDetail($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+
+        return view("orderdetail", [
+            "order" => $order,
+            "order_product" => $order_product
+        ]);
     }
 }

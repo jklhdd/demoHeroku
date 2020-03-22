@@ -24,8 +24,9 @@ class Order extends Model
     const STATUS_COMPLETE = 3;
     const STATUS_CANCEL = 4;
 
-    public function Order()
+    public function OrderProduct()
     {
-        return $this->hasMany("\App\OrderProduct");
+        //return $this->hasMany("\App\OrderProduct");
+        return $this->hasMany('App\OrderProduct', 'user_id');
     }
 }

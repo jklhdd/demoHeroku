@@ -57,3 +57,6 @@ Route::get('/checkout-success', "Webcontroller@checkSuccess")->middleware(
 );
 
 Route::get('/information', "WebController@getInfo")->middleware('auth');
+
+Route::get('/order-list', "WebController@getOrderList")->middleware('auth');
+Route::get('/order/{id}', "WebController@getOrderDetail")->middleware('auth');
