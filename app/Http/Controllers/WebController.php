@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Brand;
+use App\Mail\OrderCreated;
 use App\Order;
 use App\OrderProduct;
 
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Location;
 use Symfony\Component\Mime\Header\Headers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class WebController extends Controller
 {
@@ -237,6 +239,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
+        Mail::to("toidayg@gmail.com")->send(new OrderCreated());
         return redirect()->to("checkout-success");
     }
     public function checkSuccess()

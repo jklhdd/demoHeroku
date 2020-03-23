@@ -31,7 +31,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="tel" class="form-control" name="phone" minlength="10" required>
+                                <input type="tel" class="form-control" name="phone" minlength="10" maxlength="10" required>
                             </div>
                         </div>
                  
