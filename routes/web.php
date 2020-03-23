@@ -52,7 +52,7 @@ Route::get('/logout', function () {
 
 Route::get('/check-out', "WebController@checkOut")->middleware('auth');
 Route::post('/check-out', "WebController@placeOrder")->middleware('auth');
-Route::get('/checkout-success', "Webcontroller@checkSuccess")->middleware(
+Route::get('/checkout-success', "WebController@checkSuccess")->middleware(
     'auth'
 );
 
