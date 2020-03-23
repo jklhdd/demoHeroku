@@ -13,7 +13,7 @@
                         <div class="col-md-12">
                             <div class="form-group" >
                                 <label for="firstname">Name</label>
-                                <input type="text" class="form-control" name="name" required />
+                                <input type="text" class="form-control" name="name" minlength="4" required />
                             </div>
                         </div>   
                 
@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="streetaddress">Address</label>
-                                <input type="text" class="form-control" name="address" required>
+                                <input type="text" class="form-control" name="address" minlength="10" required>
                             </div>
                         </div>
                     
@@ -31,7 +31,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" name="phone" required>
+                                <input type="tel" class="form-control" name="phone" minlength="10" required>
                             </div>
                         </div>
                  

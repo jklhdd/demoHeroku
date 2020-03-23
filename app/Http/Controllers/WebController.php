@@ -252,6 +252,9 @@ class WebController extends Controller
     public function getOrderList()
     {
         $order = Order::all()->where("user_id", "=", Auth::id());
+        foreach ($order as $o) {
+            $this->formatOrder($o);
+        }
         return view('orderlist', ['order' => $order]);
     }
 
@@ -259,10 +262,80 @@ class WebController extends Controller
     {
         $order = Order::find($id);
         $order_product = OrderProduct::all()->where("order_id", $id);
-
+        $this->formatOrder($order);
         return view("orderdetail", [
             "order" => $order,
             "order_product" => $order_product
         ]);
+    }
+
+    public function orderAgain($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+        $new_order = $order->replicate();
+        $new_order->status = Order::STATUS_PENDING;
+        $new_order->save();
+        foreach ($order_product as $p) {
+            DB::table("order_product")->insert([
+                'order_id' => $new_order->id,
+                'product_id' => $p->product_id,
+                'qty' => $p->qty,
+                'price' => $p->price
+            ]);
+        }
+        return redirect()->to("/order-list");
+    }
+
+    public function orderCancel($id)
+    {
+        $order = Order::find($id);
+        try {
+            if ($order->status != Order::STATUS_CANCEL) {
+                $order->status = Order::STATUS_CANCEL;
+                $order->save();
+            }
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+        return redirect()->to("/order-list");
+    }
+
+    private function formatOrder($order)
+    {
+        switch ($order->payment_method) {
+            case 'cod':
+                $order->payment_method = 'Cash On Delivery';
+                break;
+            case 'bank_transfer':
+                $order->payment_method = 'Bank Transfer Payment';
+                break;
+
+            case 'paypal':
+                $order->payment_method = 'Through Paypal';
+                break;
+        }
+        switch ($order->status) {
+            case '0':
+                $order->status = 'Pending';
+                break;
+
+            case '1':
+                $order->status = 'Process';
+                break;
+
+            case '2':
+                $order->status = 'Shipping';
+                break;
+
+            case '3':
+                $order->status = 'Completed';
+                break;
+
+            case '4':
+                $order->status = 'Cancelled';
+                break;
+        }
+        return $order;
     }
 }

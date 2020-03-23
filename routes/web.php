@@ -60,3 +60,7 @@ Route::get('/information', "WebController@getInfo")->middleware('auth');
 
 Route::get('/order-list', "WebController@getOrderList")->middleware('auth');
 Route::get('/order/{id}', "WebController@getOrderDetail")->middleware('auth');
+Route::get('/order-again-{id}', "WebController@orderAgain")->middleware('auth');
+Route::get('/order-cancel-{id}', "WebController@orderCancel")->middleware(
+    'auth'
+);
