@@ -12,11 +12,7 @@
 
 <body>
     <div class="es-wrapper-color">
-        <!--[if gte mso 9]>
-			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-				<v:fill type="tile" color="#555555"></v:fill>
-			</v:background>
-		<![endif]-->
+        
         <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
@@ -120,8 +116,8 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="left">
-                                                                                        <p><strong>Order №:</strong> {{$order->id}}</p>
-                                                                                        <p><strong>Member №:</strong> {{$order->user_id}}</p>
+                                                                                        <p><strong>Order No:</strong> {{$order->id}}</p>
+                                                                                        <p><strong>Member No:</strong> {{$order->user_id}}</p>
                                                                                         <p><strong>Shipping Method:</strong> {{$order->payment_method}}</p>
                                                                                         <!-- <p><strong>Order date: </strong>04/07/2016</p>
                                                                                          -->
