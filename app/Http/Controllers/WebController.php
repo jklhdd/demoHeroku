@@ -238,6 +238,7 @@ class WebController extends Controller
                 'price' => $p->price
             ]);
         }
+        $this->formatOrder($order);
         Mail::to("toidayg@gmail.com")->send(new OrderCreated($order));
         session()->forget('cart');
         return redirect()->to("checkout-success");

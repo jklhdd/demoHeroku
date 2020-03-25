@@ -38,6 +38,7 @@
                                                                                 <tr>
                                                                                     <td class="esd-block-image" align="center" style="font-size:0">
                                                                                         <a target="_blank" href="{{url('/')}}">
+                                                                                            <h1 style="color: #ffffff; line-height: 100%;">Minishop</h1>
                                                                                         </a>
                                                                                     </td>
                                                                                 </tr>
@@ -146,9 +147,9 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="left">
-                                                                                        <p>{{$order->customer_name}}<strong></strong></p>
-                                                                                        <p>{{$order->shipping_address}}</p>
-                                                                                        <p>{{$order->phone}}<br></p>
+                                                                                        <p>Customer Name: {{$order->customer_name}}<strong></strong></p>
+                                                                                        <p>Address: {{$order->shipping_address}}</p>
+                                                                                        <p>Phone: {{$order->phone}}<br></p>
                                                                                         <!-- <p>Estimated delivery: 7 days<br></p> -->
                                                                                     </td>
                                                                                 </tr>
