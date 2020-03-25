@@ -238,8 +238,8 @@ class WebController extends Controller
                 'price' => $p->price
             ]);
         }
-        session()->forget('cart');
         Mail::to("toidayg@gmail.com")->send(new OrderCreated($order));
+        session()->forget('cart');
         return redirect()->to("checkout-success");
     }
     public function checkSuccess()
