@@ -8,16 +8,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
     <title></title>
+    <!--[if (mso 16)]>
+    <style type="text/css">
+    a {text-decoration: none;}
+    </style>
+    <![endif]-->
+    <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]-->
 </head>
 
 <body>
     <div class="es-wrapper-color">
-        
+        <!--[if gte mso 9]>
+			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+				<v:fill type="tile" color="#555555"></v:fill>
+			</v:background>
+		<![endif]-->
         <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <td class="esd-email-paddings" valign="top">                        
-                        <table class="es-content" cellspacing="0" cellpadding="0" align="center">
+                    <td class="esd-email-paddings" valign="top">
+                        <table class="es-content esd-header-popover" cellspacing="0" cellpadding="0" align="center">
                             <tbody>
                                 <tr>
                                     <td class="esd-stripe" align="center">
@@ -32,7 +42,7 @@
                                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="esd-block-image" align="center" style="font-size:0">
+                                                                                    <td align="center" class="esd-block-text">
                                                                                         <a target="_blank" href="{{url('/')}}">
                                                                                             <p style="color: #ffffff; font-size: 36px;"><strong>Minishop</strong></p>                                                                    
                                                                                         </a>
@@ -57,14 +67,13 @@
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p15t es-p15b" align="center">
                                                                                         <div class="esd-text">
-                                                                                            <h2 style="color: #242424;"><span style="font-size:30px;"><strong>Your order is confirmed. </strong></span><br></h2>
+                                                                                            <h2 style="color: #242424;"><span style="font-size:30px;"><strong>Your order is cancelled</strong></span></h2>
                                                                                         </div>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">We've received order {{$order->id}} and are working on it now.<br></p>
-                                                                                        <p style="color: #242424;">We'll email you an update when we've shipped it.<br></p>
+                                                                                        <p style="color: #242424;">We've received cancel order request from you.<br>If you don't know about this, please contact us.</p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -78,9 +87,8 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-                                                
                                                 <tr>
-                                                    <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: #eeeeee;" esd-general-paddings-checked="false" bgcolor="#eeeeee" align="left">
+                                                    <td class="esd-structure es-p10t es-p10b es-p10r es-p10l" style="background-color: #f8f8f8;" esd-general-paddings-checked="false" bgcolor="#f8f8f8" align="left">
                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                             <tbody>
                                                                 <tr>
@@ -88,8 +96,14 @@
                                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="esd-block-text" align="center">
-                                                                                        <h2 style="color: #191919;">Order & shipping info</h2>
+                                                                                    <td class="esd-block-spacer es-p20t es-p20b es-p10r es-p10l" bgcolor="#f8f8f8" align="center" style="font-size:0">
+                                                                                        <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td style="border-bottom: 1px solid #191919; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 1px; width: 100%; margin: 0px;"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -98,64 +112,6 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esd-structure es-p10t es-p30b es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #eeeeee;" bgcolor="#eeeeee" align="left">
-                                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="270" valign="top"><![endif]-->
-                                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="es-m-p20b esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Order details</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p><strong>Order No:</strong> {{$order->id}}</p>
-                                                                                        <p><strong>Member No:</strong> {{$order->user_id}}</p>
-                                                                                        <p><strong>Shipping Method:</strong> {{$order->payment_method}}</p>
-                                                                                        <!-- <p><strong>Order date: </strong>04/07/2016</p>
-                                                                                         -->
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td><td width="20"></td><td width="270" valign="top"><![endif]-->
-                                                        <table class="es-right" cellspacing="0" cellpadding="0" align="right">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Shipping Address</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p>Customer Name: {{$order->customer_name}}<strong></strong></p>
-                                                                                        <p>Address: {{$order->shipping_address}}</p>
-                                                                                        <p>Phone: {{$order->phone}}<br></p>
-                                                                                        <!-- <p>Estimated delivery: 7 days<br></p> -->
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td></tr></table><![endif]-->
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -217,7 +173,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <table cellpadding="0" cellspacing="0" class="es-footer" align="center">
+                        <table cellpadding="0" cellspacing="0" class="es-footer esd-footer-popover" align="center">
                             <tbody>
                                 <tr>
                                     <td class="esd-stripe" align="center" esd-custom-block-id="88703">
@@ -247,14 +203,13 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="center">
-                                                                                        <p><strong><a target="_blank" style="line-height: 150%;" href="{{url('/shop')}}">Browse all products</a>&nbsp;</strong></p>
+                                                                                        <p><strong><a target="_blank" style="line-height: 150%;" href="https://viewstripo.email">Browse all products</a>&nbsp;</strong></p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p20t es-p20b">
                                                                                         <p style="line-height: 120%;">Minishop, Inc.</p>
-                                                                                        <p style="line-height: 120%;">203 Fake St. Mountain View, San Francisco, California, USA</p>
-                                                                                        <p style="line-height: 120%;"><a target="_blank" style="line-height: 120%;" href="tel:123456789">123456789</a></p>
+                                                                                        <p style="line-height: 120%;">203 Fake St. Mountain View, San Francisco, California, USA<a target="_blank" href="tel:123456789" style="line-height: 120%;">123456789</a></p>
                                                                                         <p style="line-height: 120%;"><a target="_blank" href="mailto:your@mail.com" style="line-height: 120%;">your@mail.com</a></p>
                                                                                     </td>
                                                                                 </tr>
@@ -282,7 +237,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
                     </td>
                 </tr>
             </tbody>

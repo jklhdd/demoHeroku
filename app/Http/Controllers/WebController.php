@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Brand;
+use App\Mail\OrderCancell;
 use App\Mail\OrderCreated;
 use App\Order;
 use App\OrderProduct;
@@ -239,7 +240,7 @@ class WebController extends Controller
             ]);
         }
         $this->formatOrder($order);
-        Mail::to("toidayg@gmail.com")->send(new OrderCreated($order));
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         session()->forget('cart');
         return redirect()->to("checkout-success");
     }
@@ -288,6 +289,7 @@ class WebController extends Controller
                 'price' => $p->price
             ]);
         }
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         return redirect()->to("/order-list");
     }
 
@@ -302,6 +304,7 @@ class WebController extends Controller
         } catch (\Exception $e) {
             return redirect()->back();
         }
+        Mail::to(Auth::user()->email)->send(new OrderCancell($order));
         return redirect()->to("/order-list");
     }
 

@@ -47,28 +47,34 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="esd-structure es-p20t es-p20b es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #ffcc99;" bgcolor="#ffcc99" align="left">
-                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                    <td class="esd-stripe" align="center">
+                                                        <table class="es-content-body" style="border-left:1px solid transparent;border-right:1px solid transparent;border-top:1px solid transparent;border-bottom:1px solid transparent;" align="center" width="600" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="esd-container-frame" width="560" valign="top" align="center">
+                                                                    <td class="esd-structure es-p20t es-p40b es-p40r es-p40l" esd-custom-block-id="8537" align="left">
                                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="esd-block-text es-p15t es-p15b" align="center">
-                                                                                        <div class="esd-text">
-                                                                                            <h2 style="color: #242424;"><span style="font-size:30px;"><strong>Your order is confirmed. </strong></span><br></h2>
-                                                                                        </div>
+                                                                                    <td class="esd-container-frame" align="left" width="518">
+                                                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="esd-block-text es-m-txt-c" align="center">
+                                                                                                        <h2>Hey there!</h2>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="esd-block-text es-m-txt-c es-p15t" align="center">
+                                                                                                        <p>We received a request to set your email to hello@name.com. If this is correct, please confirm by clicking the button below. If you don’t know why you got this email, please tell us straight away so we can fix this for you.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="esd-block-button es-p20t es-p15b es-p10r es-p10l" align="center">
+                                                                                                        <span class="es-button-border"><a href="{{url('/')}}" class="es-button" target="_blank">Confirm Email</a></span></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
                                                                                     </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">We've received order {{$order->id}} and are working on it now.<br></p>
-                                                                                        <p style="color: #242424;">We'll email you an update when we've shipped it.<br></p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-button es-p15t es-p15b es-p10r es-p10l" align="center"><span class="es-button-border" style="border-radius: 20px; background: #191919 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-width: 0px;"><a href="{{url('/order/'.$order->id)}}" class="es-button" target="_blank" style="border-radius: 20px; font-family: lucida sans unicode,lucida grande,sans-serif; font-weight: normal; font-size: 18px; border-width: 10px 35px; background: #191919 none repeat scroll 0% 0%; border-color: #191919; color: #ffffff;">View your order details</a></span></td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -79,85 +85,6 @@
                                                     </td>
                                                 </tr>
                                                 
-                                                <tr>
-                                                    <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: #eeeeee;" esd-general-paddings-checked="false" bgcolor="#eeeeee" align="left">
-                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="580" valign="top" align="center">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="center">
-                                                                                        <h2 style="color: #191919;">Order & shipping info</h2>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esd-structure es-p10t es-p30b es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #eeeeee;" bgcolor="#eeeeee" align="left">
-                                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="270" valign="top"><![endif]-->
-                                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="es-m-p20b esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Order details</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p><strong>Order No:</strong> {{$order->id}}</p>
-                                                                                        <p><strong>Member No:</strong> {{$order->user_id}}</p>
-                                                                                        <p><strong>Shipping Method:</strong> {{$order->payment_method}}</p>
-                                                                                        <!-- <p><strong>Order date: </strong>04/07/2016</p>
-                                                                                         -->
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td><td width="20"></td><td width="270" valign="top"><![endif]-->
-                                                        <table class="es-right" cellspacing="0" cellpadding="0" align="right">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Shipping Address</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p>Customer Name: {{$order->customer_name}}<strong></strong></p>
-                                                                                        <p>Address: {{$order->shipping_address}}</p>
-                                                                                        <p>Phone: {{$order->phone}}<br></p>
-                                                                                        <!-- <p>Estimated delivery: 7 days<br></p> -->
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td></tr></table><![endif]-->
-                                                    </td>
-                                                </tr>
                                                 <tr>
                                                     <td class="esd-structure es-p25t es-p30b es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #f8f8f8;" bgcolor="#f8f8f8" align="left">
                                                         <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="270" valign="top"><![endif]-->
