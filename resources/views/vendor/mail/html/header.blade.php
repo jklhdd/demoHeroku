@@ -1,9 +1,23 @@
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
-            <h1 class="mb-0 bread">Confirm Email</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+<tr>
+  <td class="esd-structure es-p20t es-p20b es-p10r es-p10l" style="background-color: #191919;" esd-general-paddings-checked="false" bgcolor="#191919" align="left">
+      <table width="100%" cellspacing="0" cellpadding="0">
+          <tbody>
+              <tr>
+                  <td class="esd-container-frame" width="580" valign="top" align="center">
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                          <tbody>
+                              <tr>
+                                  <td class="esd-block-image" align="center" style="font-size:0">
+                                      <a target="_blank" href="{{url('/')}}">
+                                          <h1 style="color: #ffffff; line-height: 100%;">Minishop</h1>
+                                      </a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </td>
+</tr>

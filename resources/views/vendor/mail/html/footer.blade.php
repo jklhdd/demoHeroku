@@ -1,77 +1,65 @@
-
-
-
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-      	<div class="row">
-      		<div class="mouse">
-						<a href="#" class="mouse-icon">
-							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-						</a>
-					</div>
-      	</div>
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Minishop</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Menu</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Help</h2>
-              <div class="d-flex">
-	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
-	              </ul>
-	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
-	                <li><a href="#" class="py-2 d-block">Contact</a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+<table cellpadding="0" cellspacing="0" class="es-footer" align="center">
+  <tbody>
+      <tr>
+          <td class="esd-stripe" align="center" esd-custom-block-id="88703">
+              <table class="es-footer-body" width="600" cellspacing="0" cellpadding="0" align="center">
+                  <tbody>
+                      <tr>
+                          <td class="esd-structure es-p20" esd-general-paddings-checked="false" align="left">
+                              <table width="100%" cellspacing="0" cellpadding="0">
+                                  <tbody>
+                                      <tr>
+                                          <td class="esd-container-frame" width="560" valign="top" align="center">
+                                              <table width="100%" cellspacing="0" cellpadding="0">
+                                                  <tbody>
+                                                      <tr>
+                                                          <td class="esd-block-social es-p10t es-p20b" align="center" style="font-size:0">
+                                                              <table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0">
+                                                                  <tbody>
+                                                                      <tr>
+                                                                          <td class="es-p15r" valign="top" align="center"><a href><img title="Twitter" src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-gray/twitter-circle-gray.png" alt="Tw" width="32" height="32"></a></td>
+                                                                          <td class="es-p15r" valign="top" align="center"><a href><img title="Facebook" src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-gray/facebook-circle-gray.png" alt="Fb" width="32" height="32"></a></td>
+                                                                          <td class="es-p15r" valign="top" align="center"><a href><img title="Youtube" src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-gray/youtube-circle-gray.png" alt="Yt" width="32" height="32"></a></td>
+                                                                          <td valign="top" align="center"><a href><img title="Linkedin" src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/circle-gray/linkedin-circle-gray.png" alt="In" width="32" height="32"></a></td>
+                                                                      </tr>
+                                                                  </tbody>
+                                                              </table>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="esd-block-text" align="center">
+                                                              <p><strong><a target="_blank" style="line-height: 150%;" href="{{url('/shop')}}">Browse all products</a>&nbsp;</strong></p>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td align="center" class="esd-block-text es-p20t es-p20b">
+                                                              <p style="line-height: 120%;">Minishop, Inc.</p>
+                                                              <p style="line-height: 120%;">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                                                              <p style="line-height: 120%;"><a target="_blank" style="line-height: 120%;" href="tel:123456789">123456789</a></p>
+                                                              <p style="line-height: 120%;"><a target="_blank" href="mailto:your@mail.com" style="line-height: 120%;">your@mail.com</a></p>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td align="center" class="esd-block-text">
+                                                              <p><strong><a target="_blank" style="line-height: 150%;" class="unsubscribe" href>Unsubscribe</a> • <a target="_blank" style="line-height: 150%;" href="https://viewstripo.email">Update Preferences</a> • <a target="_blank" style="line-height: 150%;" href="https://viewstripo.email">Customer Support</a></strong></p>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="esd-block-text es-p10t es-p10b" align="center">
+                                                              <p><em><span style="font-size: 11px; line-height: 150%;">You are receiving this email because you have visited our site or asked us about regular newsletter</span></em></p>
+                                                          </td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </td>
+      </tr>
+  </tbody>
+</table>
