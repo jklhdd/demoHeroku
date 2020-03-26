@@ -48,11 +48,19 @@ use App\Product;
                     <p>{{$order->payment_method}}</p>
                 </div>
             </div>
-            <div class="py-4"></div>                                           
+            <div class="row py-4">
+                <h3>
+                    @if(session()->get("note") != null)
+                        {{session()->get("note")}}                        
+                    @endif
+                </h3>
+            </div>            
+            
             <div class="row" >
                 <table class="table table-striped">
                     <thead>
-                        <tr>                                
+                        <tr>
+                            <th scope="col"></th>                                
                             <th scope="col">Product	Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
@@ -62,7 +70,10 @@ use App\Product;
                     </thead>
                     <tbody>
                         @foreach($order_product as $o)                                
-                            <tr>                                    
+                            <tr>        
+                                <td>
+                                    <a href="{{url('/product-single-'.$o->product_id)}}" rel="noopener noreferrer" target="_blank" >Buy again</a>
+                                </td>                            
                                 <td>{{Product::find($o->product_id)->product_name}}</td>
                                 <td>$@convert($o->price)</td>
                                 <td>{{$o->qty}}</td>

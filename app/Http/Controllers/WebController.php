@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Mail;
 
 class WebController extends Controller
 {
+    const SUB = 1;
+    const ADD = -1;
     //
 
     // public function postClassRoom(Request $request)
@@ -68,6 +70,7 @@ class WebController extends Controller
             "product3" => $product3
         ]);
     }
+
     public function shopPage($b_id, $c_id)
     {
         //$product = Product::take(8)->join("category","category.id","=","product.category_id")->where("category.id",5)->orderBy("product_name","asc")->get();
@@ -131,9 +134,8 @@ class WebController extends Controller
     public function addCart($id, Request $request)
     {
         $product = Product::find($id);
-        if ($request->quantity <= 0) {
-            $request->quantity = 1;
-        }
+        $this->updateQty($product, $request->quantity, $this::SUB);
+
         $cart = $request->session()->get("cart");
         if ($cart == null) {
             $cart = [];
@@ -143,6 +145,7 @@ class WebController extends Controller
             if ($p->id == $product->id) {
                 $p->cart_qty = $p->cart_qty + $request->quantity;
                 session(["cart" => $cart]);
+
                 return redirect()->back();
             }
         }
@@ -155,6 +158,15 @@ class WebController extends Controller
     public function buyNow($id, Request $request)
     {
         $product = Product::find($id);
+        $this->updateQty($product, 1, $this::SUB);
+
+        if ($product->quantity == 0) {
+            return redirect()->to("/product-single-" . $id);
+        }
+
+        $product->update([
+            "quantity" => $product->quantity - 1
+        ]);
 
         $cart = $request->session()->get("cart");
         if ($cart == null) {
@@ -180,6 +192,8 @@ class WebController extends Controller
         $i = 0;
         foreach ($cart as $p) {
             if ($p->id == $id) {
+                $product = Product::find($id);
+                $this->updateQty($product, $p->cart_qty, $this::ADD);
                 array_splice($cart, $i, 1);
                 break;
             }
@@ -191,6 +205,11 @@ class WebController extends Controller
 
     public function destroyCart(Request $request)
     {
+        $cart = $request->session()->get("cart");
+        foreach ($cart as $p) {
+            $product = Product::find($p->id);
+            $this->updateQty($product, $p->cart_qty, $this::ADD);
+        }
         $request->session()->forget("cart");
         return redirect()->to("cart");
     }
@@ -278,6 +297,19 @@ class WebController extends Controller
     {
         $order = Order::find($id);
         $order_product = OrderProduct::all()->where("order_id", $id);
+        foreach ($order_product as $p) {
+            $t = Product::find($p->product_id);
+            if ($p->qty <= $t->quantity) {
+                $this->updateQty($t, $p->qty, $this::SUB);
+            } else {
+                return redirect()
+                    ->to('/order/' . $id)
+                    ->with(
+                        "note",
+                        $note = "Out of stock for " . $t->product_name
+                    );
+            }
+        }
         $new_order = $order->replicate();
         $new_order->status = Order::STATUS_PENDING;
         $new_order->save();
@@ -289,7 +321,8 @@ class WebController extends Controller
                 'price' => $p->price
             ]);
         }
-        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+        $this->formatOrder($new_order);
+        Mail::to(Auth::user()->email)->send(new OrderCreated($new_order));
         return redirect()->to("/order-list");
     }
 
@@ -344,5 +377,21 @@ class WebController extends Controller
                 break;
         }
         return $order;
+    }
+
+    public function updateQty(Product $product, $qty, $type)
+    {
+        if ($product->quantity == 0) {
+            return redirect()->to("/product-single-{{$product->id}}");
+        }
+
+        try {
+            $product->update([
+                "quantity" => $product->quantity - $qty * $type
+            ]);
+        } catch (\Exception $e) {
+            return false;
+        }
+        return true;
     }
 }
