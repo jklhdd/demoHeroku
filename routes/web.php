@@ -1,5 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Student;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Unique;
 Route::prefix("admin")
     ->middleware('check_admin')
     ->group(function () {
@@ -64,3 +67,31 @@ Route::get('/order-again-{id}', "WebController@orderAgain")->middleware('auth');
 Route::get('/order-cancel-{id}', "WebController@orderCancel")->middleware(
     'auth'
 );
+
+// exam
+Route::get('/student', function () {
+    $student_list = Student::all();
+    return view('welcome', ["list" => $student_list]);
+});
+Route::get('/add', function () {
+    return view('add_student');
+});
+Route::post('/add-student', function (Request $request) {
+    $request->validate([
+        "name" => "required|string",
+        "age" => "required|numeric",
+        "address" => "required|string",
+        "tel" => "required|string"
+    ]);
+    try {
+        Student::create([
+            "name" => $request->get("name"),
+            "age" => $request->get("age"),
+            "address" => $request->get("address"),
+            "telephone" => $request->get("tel")
+        ]);
+    } catch (\Exception $e) {
+        return redirect()->back();
+    }
+    return redirect()->to("/student");
+});
