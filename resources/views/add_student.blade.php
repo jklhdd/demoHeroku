@@ -6,8 +6,8 @@
     <title>Add student</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 </head>
-<body>
-    <div class="container">
+<body class="bg-dark">
+    <div class="container bg-light" style="min-height: 800px">
         <h3 class="py-4">Student Form</h3>
 
         <form action="{{url('/add-student')}}" method="POST">
