@@ -78,7 +78,235 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-                                                
+                                                <tr>
+                                                    <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: #f8f8f8;" esd-general-paddings-checked="false" bgcolor="#f8f8f8" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="esd-container-frame" width="580" valign="top" align="center">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="esd-block-text" align="center">
+                                                                                        <h2 style="color: #191919;">Items ordered<br></h2>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="esd-structure es-p20t es-p20r es-p20l" align="left">
+                                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="145" valign="top"><![endif]-->
+                                                        <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="125" class="es-m-p0r es-m-p20b esd-container-frame" align="center">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" class="esd-block-text">
+                                                                                        <p style="font-size: 16px;"><strong>Product name</strong></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                    <td class="es-hidden" width="20"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!--[if mso]></td><td width="145" valign="top"><![endif]-->
+                                                        <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="125" class="es-m-p20b esd-container-frame" align="center">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" class="esd-block-text">
+                                                                                        <p style="font-size: 16px;"><strong>Price</strong></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                    <td class="es-hidden" width="20"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!--[if mso]></td><td width="125" valign="top"><![endif]-->
+                                                        <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="125" class="es-m-p20b esd-container-frame" align="center">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" class="esd-block-text">
+                                                                                        <p style="font-size: 16px;"><strong>Quantity</strong></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!--[if mso]></td><td width="20"></td><td width="125" valign="top"><![endif]-->
+                                                        <table cellpadding="0" cellspacing="0" class="es-right" align="right">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="125" align="center" class="esd-container-frame">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" class="esd-block-text">
+                                                                                        <p style="font-size: 16px;"><strong>Sub price</strong></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!--[if mso]></td></tr></table><![endif]-->
+                                                    </td>
+                                                </tr>
+                                                @foreach($cart as $p)
+                                                    <tr>
+                                                        <td class="esd-structure es-p20t es-p20r es-p20l" align="left">
+                                                            <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="145" valign="top"><![endif]-->
+                                                            <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="125" class="es-m-p0r es-m-p20b esd-container-frame" align="center">
+                                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td align="center" class="esd-block-text">
+                                                                                            <p>{{\App\Product::find($p->product_id)->product_name}}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td class="es-hidden" width="20"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--[if mso]></td><td width="145" valign="top"><![endif]-->
+                                                            <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="125" class="es-m-p20b esd-container-frame" align="center">
+                                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td align="center" class="esd-block-text">
+                                                                                            <p>{{$p->price}}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td class="es-hidden" width="20"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--[if mso]></td><td width="125" valign="top"><![endif]-->
+                                                            <table cellpadding="0" cellspacing="0" class="es-left" align="left">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="125" class="es-m-p20b esd-container-frame" align="center">
+                                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td align="center" class="esd-block-text">
+                                                                                            <p>{{$p->qty}}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--[if mso]></td><td width="20"></td><td width="125" valign="top"><![endif]-->
+                                                            <table cellpadding="0" cellspacing="0" class="es-right" align="right">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="125" align="center" class="esd-container-frame">
+                                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td align="center" class="esd-block-text">
+                                                                                            <p>{{$p->qty * $p->price}}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--[if mso]></td></tr></table><![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                <tr>
+                                                    <td class="esd-structure es-p10t es-p10b es-p10r es-p10l" style="background-color: #f8f8f8;" esd-general-paddings-checked="false" bgcolor="#f8f8f8" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="esd-container-frame" width="580" valign="top" align="center">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="esd-block-spacer es-p20t es-p20b es-p10r es-p10l" bgcolor="#f8f8f8" align="center" style="font-size:0">
+                                                                                        <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td style="border-bottom: 1px solid #191919; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 1px; width: 100%; margin: 0px;"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="esd-block-text es-p15b" align="center">
+                                                                                        <table class="cke_show_border" width="240" height="101" cellspacing="1" cellpadding="1" border="0">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td><strong>Subtotal:</strong></td>
+                                                                                                    <td style="text-align: right;">{{$order->grand_total}}</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td><strong>Discount:</strong></td>
+                                                                                                    <td style="text-align: right;">$0</td>
+                                                                                                </tr>
+                                                                                                
+                                                                                                <tr>
+                                                                                                    <td><span style="font-size: 18px; line-height: 200%;"><strong>Order Total:</strong></span></td>
+                                                                                                    <td style="text-align: right;"><span style="font-size: 18px; line-height: 200%;"><strong>{{$order->grand_total}}</strong></span></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: #eeeeee;" esd-general-paddings-checked="false" bgcolor="#eeeeee" align="left">
                                                         <table width="100%" cellspacing="0" cellpadding="0">
