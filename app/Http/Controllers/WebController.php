@@ -133,7 +133,15 @@ class WebController extends Controller
 
     public function addCart($id, Request $request)
     {
+        if ($request->isMethod('get')) {
+            $request->quantity = 1;
+        }
         $product = Product::find($id);
+
+        if ($product->quantity == 0) {
+            return redirect()->to("/product-single-" . $id);
+        }
+
         $this->updateQty($product, $request->quantity, $this::SUB);
 
         $cart = $request->session()->get("cart");
