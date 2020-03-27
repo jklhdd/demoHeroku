@@ -235,6 +235,7 @@ class WebController extends Controller
             $total = $total + $p->price * $p->cart_qty;
         }
         session(["total" => $total]);
+
         return view("checkout");
     }
 
@@ -267,6 +268,7 @@ class WebController extends Controller
             ]);
         }
         $this->formatOrder($order);
+
         Mail::to(Auth::user()->email)->send(new OrderCreated($order, $cart));
         session()->forget('cart');
         return redirect()->to("checkout-success");

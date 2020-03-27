@@ -189,8 +189,10 @@
                                                                             <table cellpadding="0" cellspacing="0" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td align="center" class="esd-block-text">
-                                                                                            <p>{{\App\Product::find($p->product_id)->product_name}}</p>
+                                                                                        <td align="center" class="esd-block-text">                                                                                         
+                                                                                            @if(isset($p->product_name)) <p>{{$p->product_name}}</p>                                                                                           
+                                                                                            @else <p>{{\App\Product::find($p->product_id)->product_name}}</p>
+                                                                                            @endif
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -228,7 +230,9 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text">
-                                                                                            <p>{{$p->qty}}</p>
+                                                                                            @if(isset($p->cart_qty)) <p>{{$p->cart_qty}}</p>                                                                                           
+                                                                                            @else <p>{{$p->qty}}</p>
+                                                                                            @endif                                                                                            
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -246,7 +250,9 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text">
-                                                                                            <p>$@convert($p->qty * $p->price)</p>
+                                                                                            @if(isset($p->cart_qty)) <p>$@convert($p->cart_qty * $p->price)</p>                                                                                           
+                                                                                            @else <p>$@convert($p->qty * $p->price)</p>
+                                                                                            @endif                                                                                              
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
