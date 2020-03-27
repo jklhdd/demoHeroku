@@ -295,6 +295,9 @@ class WebController extends Controller
     public function getOrderDetail($id)
     {
         $order = Order::find($id);
+        if (Auth::user()->id != $order->user_id) {
+            return redirect()->to("/");
+        }
         $order_product = OrderProduct::all()->where("order_id", $id);
         $this->formatOrder($order);
         return view("orderdetail", [
