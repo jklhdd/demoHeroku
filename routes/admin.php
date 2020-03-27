@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 //use Illuminate\Routing\Route;
-
+Route::get('/', "AdminController@dashbroad");
 Route::get('/home', "AdminController@dashbroad");
 
 Route::get('tables/category', "AdminController@category");
