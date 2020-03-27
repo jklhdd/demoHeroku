@@ -209,7 +209,7 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text">
-                                                                                            <p>{{$p->price}}</p>
+                                                                                            <p>$@convert($p->price)</p>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -246,7 +246,7 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text">
-                                                                                            <p>{{$p->qty * $p->price}}</p>
+                                                                                            <p>$@convert($p->qty * $p->price)</p>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -284,7 +284,7 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td><strong>Subtotal:</strong></td>
-                                                                                                    <td style="text-align: right;">{{$order->grand_total}}</td>
+                                                                                                    <td style="text-align: right;">$@convert($order->grand_total)</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td><strong>Discount:</strong></td>
@@ -293,7 +293,7 @@
                                                                                                 
                                                                                                 <tr>
                                                                                                     <td><span style="font-size: 18px; line-height: 200%;"><strong>Order Total:</strong></span></td>
-                                                                                                    <td style="text-align: right;"><span style="font-size: 18px; line-height: 200%;"><strong>{{$order->grand_total}}</strong></span></td>
+                                                                                                    <td style="text-align: right;"><span style="font-size: 18px; line-height: 200%;"><strong>$@convert($order->grand_total)</strong></span></td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
