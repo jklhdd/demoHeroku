@@ -65,7 +65,7 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td class="esd-block-text es-m-txt-c es-p15t" align="center">
-                                                                                                        <p>We received a request to set your email to hello@name.com. If this is correct, please confirm by clicking the button below. If you don’t know why you got this email, please tell us straight away so we can fix this for you.</p>
+                                                                                                        <p>We received a request to set your email to {{$email}}. If this is correct, please confirm by clicking the button below. If you don’t know why you got this email, please tell us straight away so we can fix this for you.</p>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
