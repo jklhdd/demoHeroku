@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class Registered extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $email;
+    public $email;
     /**
      * Create a new message instance.
      *
