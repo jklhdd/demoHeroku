@@ -34,8 +34,20 @@ class AdminController extends Controller
         ]);
 
         try {
+            $image = null;
+            $ext_allow = ["png", 'jpg', 'jpeg', 'gif'];
+            if ($request->hasFile("image")) {
+                $file = $request->file("image");
+                $file_name = time() . '-' . $file->getClientOriginalName();
+                $ext = $file->getClientOriginalExtension();
+                if (in_array($ext, $ext_allow)) {
+                    $file->move("upload", $file_name);
+                    $image = "upload/" . $file_name;
+                }
+            }
             Category::create([
-                "category_name" => $request->get("category_name")
+                "category_name" => $request->get("category_name"),
+                'image' => $image
             ]);
         } catch (Exception $e) {
             //dd($e);

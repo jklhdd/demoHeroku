@@ -79,9 +79,9 @@ Route::get('/add', function () {
 Route::post('/add-student', function (Request $request) {
     $request->validate([
         "name" => "required|string",
-        "age" => "required|numeric",
+        "age" => "required|integer",
         "address" => "required|string",
-        "tel" => "required|string"
+        "tel" => "required|string|unique"
     ]);
     try {
         Student::create([

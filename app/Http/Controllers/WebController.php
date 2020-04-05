@@ -11,7 +11,9 @@ use App\Order;
 use App\OrderProduct;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use phpDocumentor\Reflection\Location;
 use Symfony\Component\Mime\Header\Headers;
 use Illuminate\Support\Facades\DB;
@@ -49,26 +51,36 @@ class WebController extends Controller
 
     public function homePage()
     {
-        $product1 = Product::take(8)
-            ->join("category", "category.id", "=", "product.category_id")
-            ->orderBy("price", "asc")
-            ->select('product.*', 'category.id as cate_id')
-            ->get();
-        $product3 = Product::take(8)
-            ->join("category", "category.id", "=", "product.category_id")
-            ->orderBy("product.created_at", "asc")
-            ->select('product.*', 'category.id as cate_id')
-            ->get();
-        $product2 = Product::take(8)
-            ->join("category", "category.id", "=", "product.category_id")
-            ->orderBy("price", "desc")
-            ->select('product.*', 'category.id as cate_id')
-            ->get();
-        return view('home', [
-            "product1" => $product1,
-            "product2" => $product2,
-            "product3" => $product3
-        ]);
+        if (!Cache::has("home")) {
+            $cache = [];
+            $cache['product1'] = Product::take(8)
+                ->join("category", "category.id", "=", "product.category_id")
+                ->orderBy("price", "asc")
+                ->select('product.*', 'category.id as cate_id')
+                ->get();
+            $cache['product2'] = Product::take(8)
+                ->join("category", "category.id", "=", "product.category_id")
+                ->orderBy("product.created_at", "asc")
+                ->select('product.*', 'category.id as cate_id')
+                ->get();
+            $cache['product3'] = Product::take(8)
+                ->join("category", "category.id", "=", "product.category_id")
+                ->orderBy("price", "desc")
+                ->select('product.*', 'category.id as cate_id')
+                ->get();
+            $product1 = $cache['product1'];
+            $product2 = $cache['product2'];
+            $product3 = $cache['product3'];
+            $view = view("home", [
+                "product1" => $product1,
+                "product2" => $product2,
+                "product3" => $product3
+            ])->render();
+
+            $expireDate = Carbon::now()->addHours(2);
+            Cache::put("home", $view, $expireDate);
+        }
+        return Cache::get("home");
     }
 
     public function shopPage($b_id, $c_id)

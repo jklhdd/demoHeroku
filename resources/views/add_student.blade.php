@@ -12,9 +12,10 @@
 
         <form action="{{url('/add-student')}}" method="POST">
             @csrf
-            <div class="form-group">
+            <div class="form-group @if($errors->has('product_name'))has-error @endif">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" required>
+
             </div>
             <div class="form-group">
                 <label for="age">Age:</label>
